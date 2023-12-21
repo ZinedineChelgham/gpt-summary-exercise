@@ -1,5 +1,6 @@
-## My approach
+![img.png](img.png)
 
+## My approach
 I chose to create a Python-based service that efficiently
 processes requests to generate and serve
 astronomical time-domain research summaries.
