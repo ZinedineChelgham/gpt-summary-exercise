@@ -1,0 +1,69 @@
+[
+  {
+    "id": "ZTF21aaqjyho",
+    "ra": 0.0,
+    "dec": 0.0,
+    "redshift": "None",
+    "classifications": [
+      {
+        "classification": "SNIa",
+        "probability": 0.99,
+        "origin": "SNIa score"
+      }
+    ],
+    "tns_name": "SN2021abc",
+    "comments": [
+      {
+        "author": "John Doe",
+        "text": "Are we sure about this classification? I can't see any SNIa features in the spectrum."
+      }
+    ],
+    "saved_by": [
+      {
+        "id": "user1",
+        "name": "Bill Smith",
+        "timestamp": "2021-01-01T00:00:00Z"
+      }
+    ]
+  },
+  {
+    "id": "ZTF21aaqjyho",
+    "ra": 0.0,
+    "dec": 0.0,
+    "redshift": "None",
+    "classifications": [
+      {
+        "classification": "CV",
+        "probability": 1,
+        "origin": "Jane Doe"
+      }
+    ],
+    "tns_name": "AT2021abc",
+    "comments": [
+      {
+        "author": "John Doe",
+        "text": "Definitely a CV, already classified in 2020 by Mike. No need to classify again, it can't be a supernova Ia."
+      }
+    ]
+  },
+  {
+    "id": "ZTF21aaqjyho",
+    "ra": 0.0,
+    "dec": 0.0,
+    "redshift": 0.1,
+    "classifications": [
+      {
+        "classification": "SNIa",
+        "probability": 0.99,
+        "origin": "Bill Smith"
+      }
+    ],
+    "tns_name": "None",
+    "comments": [
+      {
+        "author": "Mark",
+        "text": "I think this is a SNIa, but I'm not sure. Can someone else take a look? Attached is the spectrum. Shows some Silicon absorption lines at 6150A, but there a lot of noise in this spectrum."
+      }
+    ]
+  }
+]

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Summary page</title>
+    <link rel="stylesheet" href="summary.css">
+</head>
+<body><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Astronomical Summary</title>
+</head>
+<body>
+
+<div class="input-container">
+    <input id="userIdInput" type="text" placeholder="Enter User ID">
+    <button onclick="fetchSummary()">Fetch Summary</button>
+</div>
+<div id="summary">
+    <!-- Summary will be loaded here -->
+    <div id="loading" style="display: none">
+        <p>Fetching Summary</p>
+        <div class="loader"></div>
+    </div>
+</div>
+
+<script>
+
+    const API = "http://127.0.0.1:8080/daily-summary"
+
+    async function fetchSummary() {
+        let userId = document.getElementById('userIdInput').value;
+        const loadingElem = document.getElementById('loading')
+        if (!userId) {
+            alert("Please enter a User ID");
+            return;
+        }
+        loadingElem ? loadingElem.style.display = 'block' : undefined;// Show loading animation
+        try {
+            const response = await fetch(`${API}?userid=${userId}`);
+            const data = await response.json();
+            console.log(data.summary)
+            document.getElementById('summary').innerHTML = data.summary;
+        } catch (error) {
+            alert("An error occurred while fetching the summary ", error)
+        } finally {
+            loadingElem ? loadingElem.style.display = 'none' : undefined;
+        }
+    }
+
+
+    function formatSummary(text) {
+        // Replace main title with <h1> tag
+        text = text.replace(/^Daily Astronomical Time-Domain Research - .*/, match => `<h1>${match}</h1>`);
+        // Replace title sections with <h2> tags
+        text = text.replace(/(New Observations:|Event Summaries:|Actions Required:)/g, '<h2>$1</h2>');
+        // Format the rest of the summary text as needed
+        text = text.replace(/\*\*/g, '<b>').replace(/<\/b><br><b>/g, '</b><br><br><b>');
+
+        return text;
+    }
+
+</script>
+</body>
+</html>
+
+
+</body>
+</html>
